@@ -18,7 +18,7 @@ function App() {
 
     <HashRouter>
 
-      <Route path='/'>
+      <Route path='/' exact>
         <Home />
       </Route>
       <Route path='/SelectPizza' exact>
