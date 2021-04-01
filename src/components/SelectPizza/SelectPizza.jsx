@@ -23,16 +23,6 @@ function SelectPizza(){
         dispatch({ type: 'add-to-cart', payload: pizza})
     }
 
-    const displayPizzas = (pizzas) =>{
-        // let pizzas = getPizzas()
-        console.log(pizzas)
-        return(
-        pizzas.map( ( pizza, index ) => {
-            <p>pizza.name</p>
-
-            })
-        )
-    }
     useEffect(() => { getPizzas()},[])
     
     return (
