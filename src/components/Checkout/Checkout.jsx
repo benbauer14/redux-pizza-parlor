@@ -13,6 +13,9 @@ function Checkout() {
         return store.pizzaCart;
     });
 
+    const submitOrder = () => {
+        console.log( 'in submitOrder' );
+    }
     
     return( 
             <>
@@ -23,6 +26,7 @@ function Checkout() {
                         return <li index={pizza.id}>{pizza.name}: {pizza.price}</li>;
                     })}
                     <li>Total: ${total.toFixed(2)}</li>
+                    <button onClick={(event) => submitOrder() }>Submit Order</button>
                 </ul>
             </>
     ) 
