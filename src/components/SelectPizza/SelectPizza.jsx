@@ -18,6 +18,7 @@ function SelectPizza(){
             console.log(err);
         })
     }
+
     
     const addToCart = (pizza) =>{
         dispatch({ type: 'add-to-cart', payload: pizza})

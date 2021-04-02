@@ -7,6 +7,7 @@ import Home from '../Home/Home'
 import SelectPizza from '../SelectPizza/SelectPizza'
 import CustomerInfo from '../CustomerInfo/CustomerInfo'
 import Checkout from '../Checkout/Checkout'
+import Admin from '../Admin/Admin'
 
 function App() {
 
@@ -29,6 +30,9 @@ function App() {
       </Route>
       <Route path='/Checkout' exact>
         <Checkout />
+      </Route>
+      <Route path='/admin' exact>
+        <Admin/>
       </Route>
 
     </HashRouter>

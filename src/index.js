@@ -8,6 +8,10 @@ import logger from 'redux-logger';
 import { applyMiddleware, combineReducers, createStore } from 'redux';
 
 const pizzaOrder = ( state=[], action )=>{
+    if(action.type === 'add-cust-info'){
+        console.log('in pizzaOrder', action.payload);
+        return action.payload
+    }
     return state;
 }
 

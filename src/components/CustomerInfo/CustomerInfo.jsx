@@ -1,13 +1,16 @@
 import {Link} from 'react-router-dom';
-import {useSelector} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import { useState } from 'react';
 
 function CustomerInfo(){
+    const dispatch = useDispatch()
+
     let [name, setName] = useState('');
     let [address, setAddress] = useState('')
     let [city, setCity] = useState('')
     let [zip, setZip] = useState('')
     let [delivery, setDelivery] = useState('') 
+
 
     const pizzaCart= useSelector((store)=>{
         return store.pizzaCart;
@@ -15,26 +18,28 @@ function CustomerInfo(){
 
     const checkoutTotal = () => {
         let sum = 0
-        pizzaCart.map( item=> ( sum += item.price))
+        pizzaCart.map( item=> ( sum += Number(item.price)))
         return sum
     }
 
     const addCustInfo = () => {
-        let time= new Date().toLocaleTimeString([],{hour:'2-digit', minute:'2-digit'});
-        let date =new Date().toLocaleDateString();
-        let timeStamp = time + ' ' + date;
 
         const addCustomer={
-            name: name,
-            address: address,
+            customer_name: name,
+            street_address: address,
             city: city,
             zip: zip,
             type: delivery,
-            time: timeStamp     
+            total: checkoutTotal(),
+            pizzas: pizzaCart,
+            quantity: pizzaCart.length
+
         }
         console.log(addCustomer)
+        dispatch({ type: 'add-cust-info', payload: addCustomer})
     }
-    
+
+
     return(
         <>
         <h2>Customer Info</h2>
