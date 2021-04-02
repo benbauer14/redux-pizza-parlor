@@ -21,6 +21,7 @@ function SelectPizza(){
 
     
     const addToCart = (pizza) =>{
+        pizza.quantity= 1;
         dispatch({ type: 'add-to-cart', payload: pizza})
     }
 

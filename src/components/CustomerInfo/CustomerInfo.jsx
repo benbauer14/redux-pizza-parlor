@@ -32,7 +32,6 @@ function CustomerInfo(){
             type: delivery,
             total: checkoutTotal(),
             pizzas: pizzaCart,
-            quantity: pizzaCart.length
 
         }
         console.log(addCustomer)

@@ -18,13 +18,22 @@ function Checkout() {
 
 
     const sendOrder = () =>{
-        axios.post('/api/order', pizzaOrder).then( (response) =>{
-            console.log("back from post")
-            // TODO clear info
-        }).catch( (err) =>{
-            alert('Nope');
+        // axios.post('/api/order', pizzaOrder).then( (response) =>{
+        //     console.log("back from post")
+        //     // TODO clear info
+        // }).catch( (err) =>{
+        //     alert('Nope', err);
+        //     console.log(err);
+        // })
+        axios({
+            method: 'POST',
+            url: '/api/order',
+            data: pizzaOrder
+        }).then((response) => {
+            console.log(response);
+        }).catch((err) => {
             console.log(err);
-        })
+        });
     }
     
 
