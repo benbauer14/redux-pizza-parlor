@@ -1,11 +1,12 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useState } from 'react';
 import axios from 'axios';
+import {useHistory} from 'react-router-dom';
 
 function Checkout() {
-
+;
     const dispatch = useDispatch();
-    
+    const history = useHistory();
     const pizzaOrder = useSelector((store)=>{
         console.log(store.pizzaOrder)
         return store.pizzaOrder;
@@ -31,6 +32,7 @@ function Checkout() {
             data: pizzaOrder
         }).then((response) => {
             console.log(response);
+            history.push('/SelectPizza');
         }).catch((err) => {
             console.log(err);
         });

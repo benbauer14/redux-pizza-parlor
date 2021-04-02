@@ -1,6 +1,7 @@
 import {Link} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 import { useState } from 'react';
+import './CustomerInfo.css'
 
 function CustomerInfo(){
     const dispatch = useDispatch()
