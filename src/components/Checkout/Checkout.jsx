@@ -32,12 +32,13 @@ function Checkout() {
             data: pizzaOrder
         }).then((response) => {
             console.log(response);
+            dispatch({type: 'order-placed', payload: null})
             history.push('/SelectPizza');
         }).catch((err) => {
             console.log(err);
         });
     }
-    
+
 
     const checkoutPizza = useSelector( ( store ) =>{
         return store.pizzaCart;

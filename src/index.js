@@ -12,6 +12,9 @@ const pizzaOrder = ( state=[], action )=>{
         console.log('in pizzaOrder', action.payload);
         return action.payload
     }
+    if(action.type === 'order-placed'){
+        return state=[]
+    }
     return state;
 }
 
@@ -20,8 +23,12 @@ const pizzaCart = ( state=[], action ) =>{
         console.log( 'in pizzaCart', action.payload );
         return [ ...state, action.payload ]
     }
+    if(action.type === 'order-placed'){
+        return state=[]
+    }
     return state;
 }
+
 
 const store=createStore(
     combineReducers({
